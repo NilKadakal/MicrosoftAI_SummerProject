@@ -1,0 +1,3 @@
+SQLite is a lightweight local database.
+
+It stores data in a single database file and is useful for small local applications.

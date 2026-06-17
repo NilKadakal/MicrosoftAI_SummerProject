@@ -1,0 +1,3 @@
+Prompt engineering means writing clear instructions for a language model.
+
+In a RAG application, prompts should tell the model to answer only from the provided context.

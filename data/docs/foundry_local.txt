@@ -1,0 +1,3 @@
+Foundry Local allows AI models to run directly on a user's device without depending on cloud services.
+
+It is useful for local AI applications because the model can work offline and keep data on the device.
