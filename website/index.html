@@ -3,225 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local RAG Assistant</title>
-    <meta name="description" content="A local document Q&A assistant built with Microsoft Foundry Local, SQLite, and retrieval-augmented generation.">
+    <title>MicrosoftAI SummerProject | Local RAG Assistant</title>
+    <meta name="description" content="A Microsoft-inspired local RAG assistant built with Foundry Local, Python, SQLite, PDF/DOCX ingestion, and local language models.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="site-header">
-        <a class="brand" href="#top" aria-label="Local RAG Assistant home">
-            <span class="ms-grid" aria-hidden="true">
+        <a class="brand" href="#top" aria-label="MicrosoftAI SummerProject home">
+            <span class="ms-logo" aria-hidden="true">
                 <span></span><span></span><span></span><span></span>
             </span>
-            <span>Local RAG Assistant</span>
+            <span>MicrosoftAI SummerProject</span>
         </a>
 
         <nav class="nav-links" aria-label="Primary navigation">
-            <a href="#workflow">Workflow</a>
-            <a href="#features">Features</a>
-            <a href="#repository">Repository</a>
+            <a href="#overview">Overview</a>
+            <a href="#assistant">Assistant</a>
+            <a href="#pipeline">Pipeline</a>
+            <a href="#github">GitHub</a>
         </nav>
 
-        <a class="header-action" href="https://github.com/derobtw/ai_microsoft" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="header-button" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer">View repo</a>
     </header>
 
     <main id="top">
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-copy">
-                <p class="label reveal">Microsoft Foundry Local RAG</p>
-                <h1 id="hero-title" class="reveal">Ask private documents without leaving your device.</h1>
-                <p class="hero-text reveal">
-                    Upload PDF, DOCX, or TXT files, build a local SQLite knowledge base, and ask grounded questions through a clean web interface.
+        <section class="hero">
+            <div class="hero-copy reveal">
+                <p class="eyebrow">Microsoft Foundry Local RAG</p>
+                <h1>Ask your documents locally with a grounded AI assistant.</h1>
+                <p class="hero-text">
+                    A local Retrieval-Augmented Generation project that reads TXT, PDF, and DOCX files, stores searchable chunks in SQLite, retrieves relevant context, and answers using a local language model.
                 </p>
-                <div class="hero-actions reveal">
-                    <a class="primary-button" href="https://github.com/derobtw/ai_microsoft" target="_blank" rel="noreferrer">Open GitHub repository</a>
-                    <a class="secondary-button" href="#workflow">See how it works</a>
+                <div class="hero-actions">
+                    <a class="primary-button" href="#assistant">Try the assistant preview</a>
+                    <a class="secondary-button" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer">Open GitHub</a>
                 </div>
             </div>
 
-            <div class="hero-visual reveal" aria-label="Animated preview of the Local RAG Assistant interface">
-                <div class="product-shell">
-                    <div class="window-bar">
+            <div class="hero-panel reveal" aria-label="Local RAG assistant interface preview">
+                <div class="window-card">
+                    <div class="window-top">
                         <span></span><span></span><span></span>
-                        <p>local-rag-assistant</p>
+                        <strong>local-rag-assistant</strong>
                     </div>
-
-                    <div class="workspace-preview">
-                        <div class="upload-column">
-                            <p class="mini-label">Documents</p>
-                            <div class="file-chip chip-one">
-                                <span class="file-icon blue"></span>
-                                syllabus.pdf
-                            </div>
-                            <div class="file-chip chip-two">
-                                <span class="file-icon green"></span>
-                                cv.docx
-                            </div>
-                            <div class="file-chip chip-three">
-                                <span class="file-icon yellow"></span>
-                                notes.txt
-                            </div>
+                    <div class="assistant-preview">
+                        <div class="document-stack">
+                            <p>Documents</p>
+                            <div class="doc-chip blue">syllabus.pdf</div>
+                            <div class="doc-chip green">notes.docx</div>
+                            <div class="doc-chip yellow">rag.txt</div>
                         </div>
-
-                        <div class="flow-column">
-                            <div class="flow-line"></div>
-                            <div class="flow-node active">Upload</div>
-                            <div class="flow-node">Chunk</div>
-                            <div class="flow-node">Embed</div>
-                            <div class="flow-node">Answer</div>
+                        <div class="flow-stack">
+                            <span>Upload</span>
+                            <span>Chunk</span>
+                            <span>Embed</span>
+                            <span>Answer</span>
                         </div>
-
-                        <div class="answer-column">
-                            <p class="mini-label">Assistant</p>
-                            <div class="question-pill">Where does SQLite store data?</div>
-                            <div class="answer-block">
+                        <div class="answer-card">
+                            <p>User question</p>
+                            <strong>Where does SQLite store data?</strong>
+                            <div class="answer-lines">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </div>
-                            <div class="source-row">
-                                <span>Source</span>
-                                <strong>sqlite.txt</strong>
-                            </div>
+                            <small>Source: sqlite.txt</small>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="workflow" class="workflow-section">
-            <div class="section-intro reveal">
-                <p class="label">Workflow</p>
-                <h2>From file upload to grounded answer.</h2>
-                <p>The project keeps the RAG pipeline visible: ingestion, retrieval, generation, and sources.</p>
+        <section id="overview" class="overview-section">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Project overview</p>
+                <h2>Built as a complete local RAG workflow.</h2>
+                <p>
+                    This project is not only a chatbot interface. It includes document ingestion, embeddings, local database storage, context retrieval, guarded answering, automated tests, and a presentation website.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card reveal">
+                    <span class="accent blue-bg"></span>
+                    <h3>Local models</h3>
+                    <p>Uses Foundry Local models for embeddings and chat generation on the user's machine.</p>
+                </article>
+                <article class="stat-card reveal">
+                    <span class="accent green-bg"></span>
+                    <h3>Document Q&A</h3>
+                    <p>Supports TXT, PDF, and DOCX files for local document-based question answering.</p>
+                </article>
+                <article class="stat-card reveal">
+                    <span class="accent yellow-bg"></span>
+                    <h3>SQLite storage</h3>
+                    <p>Stores chunks and embeddings in a lightweight local SQLite database.</p>
+                </article>
+                <article class="stat-card reveal">
+                    <span class="accent red-bg"></span>
+                    <h3>Grounded answers</h3>
+                    <p>Refuses unsupported questions when the answer is not found in the provided documents.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="assistant" class="assistant-section">
+            <div class="assistant-copy reveal">
+                <p class="eyebrow">Local LLM area</p>
+                <h2>Run the assistant locally, then ask document questions.</h2>
+                <p>
+                    GitHub Pages can show the interface, but the actual local LLM runs on your computer. Clone the repository, install the dependencies, build the document database, and start asking questions from the terminal or local app.
+                </p>
+                <div class="command-card">
+                    <span>Run locally</span>
+                    <code>conda activate foundry-rag</code>
+                    <code>python src/ingest.py</code>
+                    <code>python src/answer.py "Where does SQLite store data?"</code>
+                </div>
+            </div>
+
+            <div class="demo-card reveal">
+                <div class="demo-header">
+                    <span class="status-dot"></span>
+                    <strong>Assistant preview</strong>
+                    <small>Static website demo</small>
+                </div>
+                <div class="chat-box" id="chatBox">
+                    <div class="message assistant-message">
+                        Upload local documents in the project, then ask a question. Try one of the sample questions below.
+                    </div>
+                </div>
+                <form class="question-form" id="questionForm">
+                    <input id="questionInput" type="text" placeholder="Ask about SQLite, RAG, embeddings, or unsupported topics..." autocomplete="off">
+                    <button type="submit">Ask</button>
+                </form>
+                <div class="sample-row">
+                    <button data-question="Where does SQLite store data?">SQLite</button>
+                    <button data-question="What does RAG stand for?">RAG</button>
+                    <button data-question="Who is the president of Turkey?">Unsupported</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="pipeline" class="pipeline-section">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Pipeline</p>
+                <h2>From files to reliable answers.</h2>
             </div>
 
             <div class="timeline">
                 <article class="timeline-item reveal">
                     <span>01</span>
-                    <h3>Upload documents</h3>
-                    <p>The local app accepts PDF, DOCX, and TXT files through a simple document upload flow.</p>
+                    <h3>Read documents</h3>
+                    <p>The project loads local TXT, PDF, and DOCX files from the document folder.</p>
                 </article>
-
                 <article class="timeline-item reveal">
                     <span>02</span>
-                    <h3>Index locally</h3>
-                    <p>Text is extracted, chunked, embedded, and stored in a local SQLite database.</p>
+                    <h3>Create embeddings</h3>
+                    <p>Each chunk is converted into a numerical vector using the local embedding model.</p>
                 </article>
-
                 <article class="timeline-item reveal">
                     <span>03</span>
                     <h3>Retrieve context</h3>
-                    <p>Questions are matched against document chunks using semantic similarity and filtering.</p>
+                    <p>The user question is matched with the most relevant document chunks.</p>
                 </article>
-
                 <article class="timeline-item reveal">
                     <span>04</span>
-                    <h3>Answer with sources</h3>
-                    <p>The assistant answers only from retrieved context and avoids unsupported outside knowledge.</p>
+                    <h3>Answer safely</h3>
+                    <p>The local chat model answers only from retrieved context and avoids outside knowledge.</p>
                 </article>
             </div>
         </section>
 
-        <section id="features" class="feature-section">
-            <div class="feature-copy reveal">
-                <p class="label">Project overview</p>
-                <h2>A complete local RAG demo, not just a chatbot.</h2>
+        <section id="github" class="github-section reveal">
+            <div>
+                <p class="eyebrow">Repository</p>
+                <h2>Explore the implementation.</h2>
                 <p>
-                    The project demonstrates model setup, embeddings, SQLite storage, retrieval filtering, PDF/DOCX support, automated tests, and a browser-based user experience.
+                    The GitHub repository contains the source code, README, test results, document ingestion scripts, retrieval logic, answer generation, and this website.
                 </p>
+                <a class="primary-button" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer">Go to repository</a>
             </div>
-
-            <div class="feature-grid">
-                <div class="feature-item reveal">
-                    <span class="accent-line blue-bg"></span>
-                    <h3>Foundry Local</h3>
-                    <p>Runs the chat and embedding models locally on the user's machine during the demo.</p>
-                </div>
-
-                <div class="feature-item reveal">
-                    <span class="accent-line green-bg"></span>
-                    <h3>SQLite knowledge base</h3>
-                    <p>Stores document chunks and embeddings in a lightweight local database file.</p>
-                </div>
-
-                <div class="feature-item reveal">
-                    <span class="accent-line yellow-bg"></span>
-                    <h3>Document support</h3>
-                    <p>Indexes TXT, PDF, and DOCX files with source labels and retrievable chunks.</p>
-                </div>
-
-                <div class="feature-item reveal">
-                    <span class="accent-line red-bg"></span>
-                    <h3>Grounded answers</h3>
-                    <p>Refuses unrelated questions when the answer cannot be found in the provided documents.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="repository" class="repository-section reveal">
-            <div class="repository-copy">
-                <p class="label">Source code</p>
-                <h2>Explore the full implementation on GitHub.</h2>
-                <p>
-                    The repository includes the local RAG pipeline, document ingestion, SQLite indexing, retrieval logic, answer generation, tests, and project documentation.
-                </p>
-                <a class="primary-button" href="https://github.com/derobtw/ai_microsoft" target="_blank" rel="noreferrer">Go to GitHub</a>
-            </div>
-
-            <a class="repo-preview" href="https://github.com/derobtw/ai_microsoft" target="_blank" rel="noreferrer" aria-label="Open GitHub repository">
-                <span class="repo-topline">
-                    <span class="repo-dot blue-bg"></span>
-                    <span class="repo-dot green-bg"></span>
-                    <span class="repo-dot yellow-bg"></span>
-                    <span class="repo-dot red-bg"></span>
+            <a class="repo-card" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer" aria-label="Open GitHub repository">
+                <span class="repo-colors">
+                    <span class="blue-bg"></span>
+                    <span class="green-bg"></span>
+                    <span class="yellow-bg"></span>
+                    <span class="red-bg"></span>
                 </span>
-                <strong>derobtw / ai_microsoft</strong>
-                <span>Local RAG Assistant with Foundry Local, SQLite, PDF/DOCX ingestion, tests, and a custom web interface.</span>
-                <em>github.com/derobtw/ai_microsoft</em>
+                <strong>NilKadakal / MicrosoftAI_SummerProject</strong>
+                <p>Local RAG Assistant with Foundry Local, Python, SQLite, PDF/DOCX support, tests, and a Microsoft-inspired website.</p>
+                <em>github.com/NilKadakal/MicrosoftAI_SummerProject</em>
             </a>
         </section>
     </main>
 
-    <script>
-        const revealElements = document.querySelectorAll(".reveal");
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.16
-            }
-        );
-
-        revealElements.forEach((element, index) => {
-            element.style.transitionDelay = `${Math.min(index * 70, 420)}ms`;
-            observer.observe(element);
-        });
-
-        const header = document.querySelector(".site-header");
-
-        window.addEventListener("scroll", () => {
-            const scrolled = window.scrollY > 24;
-            header.style.boxShadow = scrolled
-                ? "0 12px 30px rgba(15, 23, 42, 0.08)"
-                : "none";
-        });
-
-        const flowNodes = document.querySelectorAll(".flow-node");
-        let activeFlowIndex = 0;
-
-        setInterval(() => {
-            flowNodes.forEach((node) => node.classList.remove("active"));
-            flowNodes[activeFlowIndex].classList.add("active");
-            activeFlowIndex = (activeFlowIndex + 1) % flowNodes.length;
-        }, 1200);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
