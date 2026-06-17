@@ -3,198 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MicrosoftAI SummerProject | Local RAG Assistant</title>
-    <meta name="description" content="A Microsoft-inspired local RAG assistant built with Foundry Local, Python, SQLite, PDF/DOCX ingestion, and local language models.">
+    <title>MicrosoftAI SummerProject</title>
+    <meta name="description" content="A Microsoft-inspired project website for a local RAG assistant built with Foundry Local, Python, SQLite, PDF/DOCX support, and local LLM answering.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="site-header">
+    <header class="topbar">
         <a class="brand" href="#top" aria-label="MicrosoftAI SummerProject home">
-            <span class="ms-logo" aria-hidden="true">
+            <span class="ms-mark" aria-hidden="true">
                 <span></span><span></span><span></span><span></span>
             </span>
             <span>MicrosoftAI SummerProject</span>
         </a>
 
-        <nav class="nav-links" aria-label="Primary navigation">
-            <a href="#overview">Overview</a>
-            <a href="#assistant">Assistant</a>
-            <a href="#pipeline">Pipeline</a>
-            <a href="#github">GitHub</a>
+        <nav class="topnav" aria-label="Primary navigation">
+            <a href="#assistant">Assistant lab</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#tests">Tests</a>
+            <a href="#run">Run locally</a>
         </nav>
 
-        <a class="header-button" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer">View repo</a>
+        <a class="repo-link" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer">GitHub repo</a>
     </header>
 
     <main id="top">
         <section class="hero">
-            <div class="hero-copy reveal">
-                <p class="eyebrow">Microsoft Foundry Local RAG</p>
-                <h1>Ask your documents locally with a grounded AI assistant.</h1>
-                <p class="hero-text">
-                    A local Retrieval-Augmented Generation project that reads TXT, PDF, and DOCX files, stores searchable chunks in SQLite, retrieves relevant context, and answers using a local language model.
+            <div class="hero-kicker reveal">
+                <span>Foundry Local</span>
+                <span>SQLite</span>
+                <span>PDF / DOCX / TXT</span>
+            </div>
+
+            <div class="hero-main reveal">
+                <p class="section-label">Local document intelligence</p>
+                <h1>A private RAG assistant that runs on your machine.</h1>
+                <p>
+                    This project turns local course notes, PDFs, DOCX files, and text documents into a searchable knowledge base. The assistant retrieves the right context first, then answers with a local language model.
                 </p>
                 <div class="hero-actions">
-                    <a class="primary-button" href="#assistant">Try the assistant preview</a>
-                    <a class="secondary-button" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer">Open GitHub</a>
+                    <a class="primary-button" href="#assistant">Open assistant lab</a>
+                    <a class="secondary-button" href="#architecture">View architecture</a>
                 </div>
             </div>
 
-            <div class="hero-panel reveal" aria-label="Local RAG assistant interface preview">
-                <div class="window-card">
-                    <div class="window-top">
-                        <span></span><span></span><span></span>
-                        <strong>local-rag-assistant</strong>
-                    </div>
-                    <div class="assistant-preview">
-                        <div class="document-stack">
-                            <p>Documents</p>
-                            <div class="doc-chip blue">syllabus.pdf</div>
-                            <div class="doc-chip green">notes.docx</div>
-                            <div class="doc-chip yellow">rag.txt</div>
-                        </div>
-                        <div class="flow-stack">
-                            <span>Upload</span>
-                            <span>Chunk</span>
-                            <span>Embed</span>
-                            <span>Answer</span>
-                        </div>
-                        <div class="answer-card">
-                            <p>User question</p>
-                            <strong>Where does SQLite store data?</strong>
-                            <div class="answer-lines">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <small>Source: sqlite.txt</small>
-                        </div>
-                    </div>
+            <div class="hero-metrics reveal" aria-label="Project highlights">
+                <div>
+                    <strong>100%</strong>
+                    <span>local demo</span>
+                </div>
+                <div>
+                    <strong>3</strong>
+                    <span>document types</span>
+                </div>
+                <div>
+                    <strong>SQLite</strong>
+                    <span>knowledge base</span>
                 </div>
             </div>
         </section>
 
-        <section id="overview" class="overview-section">
+        <section id="assistant" class="workspace-section">
+            <div class="workspace-heading reveal">
+                <p class="section-label">Assistant lab</p>
+                <h2>Preview the local LLM experience.</h2>
+                <p>
+                    This website includes a browser demo of the interaction pattern. The real model runs locally from the repository using Foundry Local and the Python scripts.
+                </p>
+            </div>
+
+            <div class="workbench reveal">
+                <aside class="workbench-sidebar">
+                    <div class="sidebar-title">Project files</div>
+                    <button class="file-row active" data-fill="Where does SQLite store data?">
+                        <span class="file-type blue">TXT</span>
+                        sqlite.txt
+                    </button>
+                    <button class="file-row" data-fill="What does RAG stand for?">
+                        <span class="file-type green">TXT</span>
+                        rag.txt
+                    </button>
+                    <button class="file-row" data-fill="What are embeddings used for?">
+                        <span class="file-type yellow">TXT</span>
+                        embeddings.txt
+                    </button>
+                    <button class="file-row" data-fill="Who is the president of Turkey?">
+                        <span class="file-type red">OUT</span>
+                        unsupported question
+                    </button>
+                </aside>
+
+                <section class="chat-lab" aria-label="Assistant preview">
+                    <div class="lab-header">
+                        <div>
+                            <span class="live-dot"></span>
+                            <strong>Local assistant preview</strong>
+                        </div>
+                        <small>Static GitHub Pages demo</small>
+                    </div>
+
+                    <div class="chat-window" id="chatWindow">
+                        <div class="message assistant-message">
+                            Ask a question from the sample documents. The real project retrieves chunks from SQLite and sends them to the local model.
+                        </div>
+                    </div>
+
+                    <form class="ask-form" id="askForm">
+                        <input id="questionInput" type="text" placeholder="Ask a document question..." autocomplete="off">
+                        <button type="submit">Ask</button>
+                    </form>
+                </section>
+
+                <aside class="context-panel">
+                    <div class="context-block">
+                        <span>Retrieved source</span>
+                        <strong id="sourceName">sqlite.txt</strong>
+                    </div>
+                    <div class="context-block">
+                        <span>Similarity mode</span>
+                        <strong>Cosine similarity</strong>
+                    </div>
+                    <div class="context-block">
+                        <span>Guardrail</span>
+                        <strong>Answer only from context</strong>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="architecture" class="architecture-section">
             <div class="section-heading reveal">
-                <p class="eyebrow">Project overview</p>
-                <h2>Built as a complete local RAG workflow.</h2>
-                <p>
-                    This project is not only a chatbot interface. It includes document ingestion, embeddings, local database storage, context retrieval, guarded answering, automated tests, and a presentation website.
-                </p>
+                <p class="section-label">Architecture</p>
+                <h2>The pipeline is intentionally transparent.</h2>
             </div>
 
-            <div class="stats-grid">
-                <article class="stat-card reveal">
-                    <span class="accent blue-bg"></span>
-                    <h3>Local models</h3>
-                    <p>Uses Foundry Local models for embeddings and chat generation on the user's machine.</p>
+            <div class="architecture-map reveal">
+                <article>
+                    <span>01</span>
+                    <h3>Document intake</h3>
+                    <p>TXT, PDF, and DOCX files are read from the local document folder.</p>
                 </article>
-                <article class="stat-card reveal">
-                    <span class="accent green-bg"></span>
-                    <h3>Document Q&A</h3>
-                    <p>Supports TXT, PDF, and DOCX files for local document-based question answering.</p>
+                <article>
+                    <span>02</span>
+                    <h3>Chunking</h3>
+                    <p>Extracted text is split into smaller passages that can be searched reliably.</p>
                 </article>
-                <article class="stat-card reveal">
-                    <span class="accent yellow-bg"></span>
-                    <h3>SQLite storage</h3>
-                    <p>Stores chunks and embeddings in a lightweight local SQLite database.</p>
+                <article>
+                    <span>03</span>
+                    <h3>Embeddings</h3>
+                    <p>Each chunk is converted into a vector using a local embedding model.</p>
                 </article>
-                <article class="stat-card reveal">
-                    <span class="accent red-bg"></span>
-                    <h3>Grounded answers</h3>
-                    <p>Refuses unsupported questions when the answer is not found in the provided documents.</p>
+                <article>
+                    <span>04</span>
+                    <h3>SQLite index</h3>
+                    <p>Chunks, metadata, and vectors are stored in a lightweight local database.</p>
+                </article>
+                <article>
+                    <span>05</span>
+                    <h3>Answer generation</h3>
+                    <p>The local chat model answers using only the retrieved context.</p>
                 </article>
             </div>
         </section>
 
-        <section id="assistant" class="assistant-section">
-            <div class="assistant-copy reveal">
-                <p class="eyebrow">Local LLM area</p>
-                <h2>Run the assistant locally, then ask document questions.</h2>
+        <section id="tests" class="tests-section">
+            <div class="tests-copy reveal">
+                <p class="section-label">Validation</p>
+                <h2>Tested with answerable and unsupported questions.</h2>
                 <p>
-                    GitHub Pages can show the interface, but the actual local LLM runs on your computer. Clone the repository, install the dependencies, build the document database, and start asking questions from the terminal or local app.
+                    The project includes automated test output in <code>TEST_RESULTS.md</code>. The goal is not only to answer correct document questions, but also to refuse questions that are not supported by the uploaded files.
                 </p>
-                <div class="command-card">
-                    <span>Run locally</span>
+            </div>
+
+            <div class="test-table reveal" role="table" aria-label="RAG test results">
+                <div class="table-row table-head" role="row">
+                    <span>Question</span>
+                    <span>Expected behavior</span>
+                    <span>Status</span>
+                </div>
+                <div class="table-row" role="row">
+                    <span>Where does SQLite store data?</span>
+                    <span>Answer from SQLite context</span>
+                    <strong class="pass">Passed</strong>
+                </div>
+                <div class="table-row" role="row">
+                    <span>What are embeddings used for?</span>
+                    <span>Answer from embeddings context</span>
+                    <strong class="pass">Passed</strong>
+                </div>
+                <div class="table-row" role="row">
+                    <span>Who is the president of Turkey?</span>
+                    <span>Refuse unsupported question</span>
+                    <strong class="pass">Passed</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="run" class="run-section">
+            <div class="run-card reveal">
+                <div>
+                    <p class="section-label">Run locally</p>
+                    <h2>Clone, index, ask.</h2>
+                    <p>
+                        GitHub Pages hosts the presentation website. The actual local LLM is started from the Python project on the user's computer.
+                    </p>
+                </div>
+                <div class="terminal-card" aria-label="Local run commands">
+                    <div class="terminal-top">
+                        <span></span><span></span><span></span>
+                        <strong>Terminal</strong>
+                    </div>
+                    <code>git clone https://github.com/NilKadakal/MicrosoftAI_SummerProject.git</code>
+                    <code>cd MicrosoftAI_SummerProject</code>
                     <code>conda activate foundry-rag</code>
                     <code>python src/ingest.py</code>
                     <code>python src/answer.py "Where does SQLite store data?"</code>
                 </div>
             </div>
-
-            <div class="demo-card reveal">
-                <div class="demo-header">
-                    <span class="status-dot"></span>
-                    <strong>Assistant preview</strong>
-                    <small>Static website demo</small>
-                </div>
-                <div class="chat-box" id="chatBox">
-                    <div class="message assistant-message">
-                        Upload local documents in the project, then ask a question. Try one of the sample questions below.
-                    </div>
-                </div>
-                <form class="question-form" id="questionForm">
-                    <input id="questionInput" type="text" placeholder="Ask about SQLite, RAG, embeddings, or unsupported topics..." autocomplete="off">
-                    <button type="submit">Ask</button>
-                </form>
-                <div class="sample-row">
-                    <button data-question="Where does SQLite store data?">SQLite</button>
-                    <button data-question="What does RAG stand for?">RAG</button>
-                    <button data-question="Who is the president of Turkey?">Unsupported</button>
-                </div>
-            </div>
         </section>
 
-        <section id="pipeline" class="pipeline-section">
-            <div class="section-heading reveal">
-                <p class="eyebrow">Pipeline</p>
-                <h2>From files to reliable answers.</h2>
-            </div>
-
-            <div class="timeline">
-                <article class="timeline-item reveal">
-                    <span>01</span>
-                    <h3>Read documents</h3>
-                    <p>The project loads local TXT, PDF, and DOCX files from the document folder.</p>
-                </article>
-                <article class="timeline-item reveal">
-                    <span>02</span>
-                    <h3>Create embeddings</h3>
-                    <p>Each chunk is converted into a numerical vector using the local embedding model.</p>
-                </article>
-                <article class="timeline-item reveal">
-                    <span>03</span>
-                    <h3>Retrieve context</h3>
-                    <p>The user question is matched with the most relevant document chunks.</p>
-                </article>
-                <article class="timeline-item reveal">
-                    <span>04</span>
-                    <h3>Answer safely</h3>
-                    <p>The local chat model answers only from retrieved context and avoids outside knowledge.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="github" class="github-section reveal">
+        <section class="github-strip reveal">
             <div>
-                <p class="eyebrow">Repository</p>
-                <h2>Explore the implementation.</h2>
-                <p>
-                    The GitHub repository contains the source code, README, test results, document ingestion scripts, retrieval logic, answer generation, and this website.
-                </p>
-                <a class="primary-button" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer">Go to repository</a>
+                <p class="section-label">Repository</p>
+                <h2>NilKadakal / MicrosoftAI_SummerProject</h2>
             </div>
-            <a class="repo-card" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer" aria-label="Open GitHub repository">
-                <span class="repo-colors">
-                    <span class="blue-bg"></span>
-                    <span class="green-bg"></span>
-                    <span class="yellow-bg"></span>
-                    <span class="red-bg"></span>
-                </span>
-                <strong>NilKadakal / MicrosoftAI_SummerProject</strong>
-                <p>Local RAG Assistant with Foundry Local, Python, SQLite, PDF/DOCX support, tests, and a Microsoft-inspired website.</p>
-                <em>github.com/NilKadakal/MicrosoftAI_SummerProject</em>
-            </a>
+            <a class="primary-button" href="https://github.com/NilKadakal/MicrosoftAI_SummerProject" target="_blank" rel="noreferrer">Open project on GitHub</a>
         </section>
     </main>
 
