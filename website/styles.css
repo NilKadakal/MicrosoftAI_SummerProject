@@ -193,7 +193,7 @@ input {
     position: relative;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 34px;
+    margin-bottom: 46px;
 }
 
 .hero-kicker span {
@@ -215,7 +215,7 @@ input {
 .section-label {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
     margin: 0 0 15px;
     color: var(--blue-2);
     font-size: 12px;
@@ -226,15 +226,15 @@ input {
 
 .section-label::before {
     content: "";
-    width: 9px;
-    height: 9px;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
     border-radius: 2px;
-    background: var(--blue-2);
-    box-shadow:
-        13px 0 0 var(--green),
-        0 13px 0 var(--yellow),
-        13px 13px 0 var(--orange);
-    transform: translateY(-6px);
+    background:
+        linear-gradient(var(--blue-2), var(--blue-2)) 0 0 / 9px 9px no-repeat,
+        linear-gradient(var(--green), var(--green)) 13px 0 / 9px 9px no-repeat,
+        linear-gradient(var(--yellow), var(--yellow)) 0 13px / 9px 9px no-repeat,
+        linear-gradient(var(--orange), var(--orange)) 13px 13px / 9px 9px no-repeat;
 }
 
 h1,
