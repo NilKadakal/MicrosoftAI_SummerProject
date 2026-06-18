@@ -10,6 +10,28 @@ The goal of this project is to build a local offline document question-answering
 
 Instead of relying only on the language model's general knowledge, the assistant retrieves relevant information from local documents and uses that information as context before answering.
 
+## Project Website
+
+This project also includes a modern Microsoft-inspired project website that introduces the Local RAG Assistant and demonstrates the user-facing question-answering flow.
+
+The website explains the goal of the project, the local RAG pipeline, supported document types, and includes a chat-style interface section that represents how users can interact with the local LLM assistant.
+
+### Live Website
+
+You can view the project website here:
+
+https://nilkadakal.github.io/MicrosoftAI_SummerProject/website/
+
+### Website Files
+
+The website source files are located in:
+
+```text
+docs/
+├── index.html
+├── style.css
+└── script.js
+
 ## Technologies Used
 
 - Python 3.11
