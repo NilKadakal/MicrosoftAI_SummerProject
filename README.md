@@ -20,7 +20,7 @@ The website explains the goal of the project, the local RAG pipeline, supported 
 
 You can view the project website here:
 
-https://nilkadakal.github.io/MicrosoftAI_SummerProject/website/
+[https://nilkadakal.github.io/MicrosoftAI_SummerProject/website/](https://nilkadakal.github.io/MicrosoftAI_SummerProject/#assistant)
 
 ### Website Files
 
